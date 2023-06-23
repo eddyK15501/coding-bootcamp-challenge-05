@@ -5,7 +5,7 @@ $(function () {
 
   const hour = dayjs().format('HH');
 
-  const pastPresentFuture = () => {
+  const setColor = () => {
     $('.time-block').each(function() {
       const timeBlock = this.id
 
@@ -19,10 +19,23 @@ $(function () {
     })
   }
 
-  pastPresentFuture()
+  const setDate = () => {
+    const updateHeader = $('#currentDay')
+    const date = dayjs().format('ddd. MMMM D, YYYY')
+    const time = dayjs().format('hh:mm:ss A')
 
-  
-  
+    updateHeader.text(`${date} | ${time}`)
+  }
+
+
+
+
+
+
+
+  setInterval(setColor, 1000)
+  setInterval(setDate, 1000)
+
 });
 
 
