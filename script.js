@@ -3,10 +3,27 @@
 // in the html.
 $(function () {
 
-});
+  const hour = dayjs().format('HH');
 
-const gimmeHour = dayjs().format('HH');
-console.log(gimmeHour)
+  const pastPresentFuture = () => {
+    $('.time-block').each(function() {
+      const timeBlock = this.id
+
+      if (timeBlock === hour) {
+        $(this).removeClass('past future').addClass('present')
+      } else if (timeBlock > hour) {
+        $(this).removeClass('past present').addClass('future')
+      } else {
+        $(this).removeClass('present future').addClass('past')
+      }
+    })
+  }
+
+  pastPresentFuture()
+
+  
+  
+});
 
 
 
