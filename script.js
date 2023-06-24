@@ -41,15 +41,15 @@ $(function () {
   const getEvent = () => {
     $('.time-block').each(function () {
       const key = $(this).attr('id');
-      const value = localStorage.getItem(key)
+      const value = localStorage.getItem(key);
 
-      $(this).children('textarea').val(value)
+      $(this).children('textarea').val(value);
     })
   }
   
   // setColor and updateHeader every second to update application
-  setInterval(setColor, 1000)
-  setInterval(updateHeader, 1000)
-  saveEvent()
-  getEvent()
+  setInterval(setColor, 1000);
+  setInterval(updateHeader, 1000);
+  saveEvent();
+  getEvent();
 });
