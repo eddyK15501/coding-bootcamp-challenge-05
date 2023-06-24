@@ -24,6 +24,7 @@ $(function () {
     const date = dayjs().format('ddd. MMMM D, YYYY');
     const time = dayjs().format('hh:mm:ss A');
 
+    // JavaScript template literals, not jQuery
     currentDay.text(`${date} | ${time}`);
   }
 
