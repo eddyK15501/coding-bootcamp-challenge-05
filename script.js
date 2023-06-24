@@ -27,8 +27,8 @@ $(function () {
     currentDay.text(`${date} | ${time}`);
   }
 
-  // save notes to localStorage, when clicking the save button
-  const saveDate = () => {
+  // save event to localStorage, when clicking the save button
+  const saveEvent = () => {
     $('.btn').on('click', function () {
       const key = $(this).parent().attr('id');
       const value = $(this).siblings('textarea').val();
@@ -37,8 +37,8 @@ $(function () {
     })
   }
 
-  // get notes that were saved to localStorage, upon initial render
-  const getDate = () => {
+  // get event that were saved to localStorage, upon initial render
+  const getEvent = () => {
     $('.time-block').each(function () {
       const key = $(this).attr('id');
       const value = localStorage.getItem(key)
@@ -50,6 +50,6 @@ $(function () {
   // setColor and updateHeader every second to update application
   setInterval(setColor, 1000)
   setInterval(updateHeader, 1000)
-  saveDate()
-  getDate()
+  saveEvent()
+  getEvent()
 });
